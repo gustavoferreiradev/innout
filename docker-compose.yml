@@ -5,19 +5,18 @@ services:
     image: webdevops/php-apache:7.4-alpine
     ports:
       - "8090:80"
+    environment: 
+      WEB_DOCUMENT_ROOT: /app/public  
     volumes:
       - ./:/app
-
+    links: 
+      - db
   db:
     image: mysql
+    ports:
+      - "3306:3306"
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
-
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-    ports:
-      - "8089:80"
+      MYSQL_DATABASE: INNOUT
