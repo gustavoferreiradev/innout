@@ -2,13 +2,14 @@ version: "3"
 
 services:
   web:
-    image: webdevops/php-apache:7.4-alpine
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile    
     ports:
       - "8090:80"
-    environment: 
-      WEB_DOCUMENT_ROOT: /app/public  
+
     volumes:
-      - ./:/app
+      - ./:/var/www/html
     links: 
       - db
   db:
