@@ -1,6 +1,4 @@
 <?php
-loadModel('WorkingHours');
-
 Database::executeSQL('DELETE FROM working_hours');
 Database::executeSQL('DELETE FROM users WHERE id > 5');
 
@@ -53,7 +51,7 @@ function populateWorkingHours($userId, $initialDate, $regularRate, $extraRate, $
             $template = getDayTemplateByOdds($regularRate, $extraRate, $lazyRate);
             $columns = array_merge($columns, $template);
             $workingHours = new WorkingHours($columns);
-            $workingHours->save();
+            $workingHours->insert();
         }
 
         $currentDate = getNextDay($currentDate)->format('Y-m-d');
