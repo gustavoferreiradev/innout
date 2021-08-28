@@ -20,7 +20,7 @@
 
 ## ⚙️ Funcionalidades
 
-- [x] Registrar ponto de entrada, saída, horário de almoço. 
+- [ ] Registrar ponto de entrada, saída, horário de almoço. 
 - [x] Relatórios Gerenciais
       - [x] Registro de quantidade de funcionários.
       - [x] Registro de faltas do dia. 
