@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="assets/css/login.css">
     <title>In 'n Out</title>
 </head>
+
 <body>
     <form class="form-login" action="#" method="post">
         <div class="login-card card">
@@ -24,30 +26,26 @@
                 <?php include(TEMPLATE_PATH . '/messages.php') ?>
                 <div class="form-group">
                     <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email"
-                     class="form-control <?= $errors['email'] ? 'is-invalid' : '' ?>"
-                     value="<?= $email ?>"
-                     placeholder="Informe o e-mail" autofocus />
+                    <input type="email" id="email" name="email" class="form-control <?= $errors['email'] ? 'is-invalid' : '' ?>" value="<?= $email ?>" placeholder="Informe o e-mail" autofocus />
 
-                     <div class="invalid-feedback">
+                    <div class="invalid-feedback">
                         <?= $errors['email'] ?>
-                     </div>
-                </div>            
+                    </div>
+                </div>
                 <div class="form-group">
                     <label for="password">Senha</label>
-                    <input type="password" id="password" name="password"
-                     class="form-control <?= $errors['password'] ? 'is-invalid' : '' ?>"
-                     placeholder="Informe a senha" autofocus />
+                    <input type="password" id="password" name="password" class="form-control <?= $errors['password'] ? 'is-invalid' : '' ?>" placeholder="Informe a senha" autofocus />
 
-                     <div class="invalid-feedback">
+                    <div class="invalid-feedback">
                         <?= $errors['password'] ?>
-                     </div>
-                </div>           
-            </div>  
+                    </div>
+                </div>
+            </div>
             <div class="card-footer">
                 <button class="btn btn-lg btn-primary">Entrar</button>
-            </div> 
+            </div>
         </div>
-    </form>    
+    </form>
 </body>
+
 </html>

@@ -6,17 +6,28 @@ class Model
     protected static $columns = [];
     protected $values = [];
 
-    function __construct($arr)
+    function __construct($arr, $sanitize = true)
     {
-        $this->loadFromArray($arr);
+        $this->loadFromArray($arr, $sanitize);
     }
 
-    public function loadFromArray($arr)
+    public function loadFromArray($arr, $sanitize = true)
     {
         if ($arr) {
+            // $conn = Database::getConnection();
             foreach ($arr as $key => $value) {
-                $this->$key = $value;
+                $cleanValue = $value;
+                if ($sanitize && isset($cleanValue)) {
+                    $cleanValue = strip_tags(trim($cleanValue));
+                    $cleanValue = htmlentities($cleanValue, ENT_NOQUOTES);
+                    // Proteger contra SQL Injection
+                    // $cleanValue = mysqli_real_escape_string($conn, $cleanValue);
+
+                }
+                $this->$key = $cleanValue;
             }
+
+            // $conn->close();
         }
     }
 
@@ -29,6 +40,11 @@ class Model
     public function __set($key, $value)
     {
         $this->values[$key] = $value;
+    }
+
+    public function getValues()
+    {
+        return $this->values;
     }
 
     public static function getOne($filters = [], $columns = '*')
@@ -91,11 +107,26 @@ class Model
         Database::executeSQL($sql);
     }
 
-    public static function getCount($filters = []) 
+    public static function getCount($filters = [])
     {
         $result = static::getResultSetFromSelect(
-            $filters, 'count(*) as count');
-            return $result->fetch_assoc()['count'];
+            $filters,
+            'count(*) as count'
+        );
+        return $result->fetch_assoc()['count'];
+    }
+
+    public function delete()
+    {
+        static::deleteById($this->id);
+    }
+
+    public static function deleteById($id)
+    {
+
+        $sql = "DELETE FROM " . static::$tableName . " WHERE id = {$id}";
+
+        Database::executeSQL($sql);
     }
 
     private static function getFilters($filters)
@@ -112,7 +143,7 @@ class Model
             }
         }
         return $sql;
-    }     
+    }
 
     private static function getFormattedValue($value)
     {
