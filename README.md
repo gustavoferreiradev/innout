@@ -62,7 +62,7 @@ $ docker-compose up -d
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
-#### **Website**  ([PHP](https://php.net/)  +  [JavaScript](https://www.javascript.com/))
+#### **Website**  ([HTML](#)  + [CSS](#) + [JavaScript](https://www.javascript.com/))
 
 -   **[Bootstrap](https://getbootstrap.com/)**
 
@@ -83,7 +83,10 @@ As seguintes ferramentas foram usadas na construção do projeto:
 <a href="https://github.com/gustavoferreiradev">
  <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/19676795?v=4" width="100px;" alt=""/>
  <br />
-
+ <sub><b>Gustavo Ferreira</b></sub></a> <a href="https://github.com/gustavoferreiradev/" title="Gustavo Ferreira">🚀</a>
+ <br />
+ 
+ 
 [![Linkedin Badge](https://img.shields.io/badge/-Gustavo-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/gustavofersilva/)](https://www.linkedin.com/in/gustavofersilva/) 
 [![Gmail Badge](https://img.shields.io/badge/-gustavofersilva@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:gustavofersilva@gmail.com)](mailto:gustavofersilva@gmail.com)
 
@@ -94,3 +97,5 @@ As seguintes ferramentas foram usadas na construção do projeto:
 Este projeto esta sobe a licença [MIT](./LICENSE).
 
 Feito com ❤️ por Gustavo Fereira 👋🏽 [Entre em contato!](https://www.linkedin.com/in/gustavofersilva/)
+
+
