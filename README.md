@@ -62,7 +62,7 @@ $ docker-compose up -d
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
-#### **Website**  ([HTML](#)  + [CSS](#) + [JavaScript](https://www.javascript.com/))
+#### **Website**  ([HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)  + [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS) + [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript))
 
 -   **[Bootstrap](https://getbootstrap.com/)**
 
